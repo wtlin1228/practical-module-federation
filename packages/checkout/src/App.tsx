@@ -1,5 +1,5 @@
 import './App.css';
-import Provider from 'provider';
+import Provider from './components/ProviderComponent';
 
 const App = () => {
   return (
