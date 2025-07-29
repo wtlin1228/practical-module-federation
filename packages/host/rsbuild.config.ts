@@ -5,7 +5,6 @@ import { tanstackRouter } from "@tanstack/router-plugin/rspack";
 import moduleFederationConfig from "./module-federation.config";
 
 export default defineConfig({
-  mode: "development",
   output: {
     minify: false,
   },

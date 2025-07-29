@@ -66,6 +66,9 @@ importers:
 
   packages/host:
     dependencies:
+      '@module-federation/enhanced':
+        specifier: ^0.17.1
+        version: 0.17.1(@rspack/core@1.4.10(@swc/helpers@0.5.17))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)(webpack@5.100.2)
       '@tanstack/react-router':
         specifier: ^1.130.2
         version: 1.130.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
