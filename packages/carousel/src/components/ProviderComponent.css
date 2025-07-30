@@ -1,3 +1,7 @@
+.c {
+  background-color: chocolate;
+}
+
 .container {
   display: flex;
   flex-direction: column;

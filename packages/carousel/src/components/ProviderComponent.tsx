@@ -2,20 +2,25 @@ import React, { useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import Button from "@mui/material/Button";
-import "./ProviderComponent.css";
 
 const theme = createTheme();
 
+// this turns the sync CSS asset into async
+export const loadCss = async () => {
+  await import("./ProviderComponent.css");
+};
+
 const Provider: React.FC = () => {
   const [count, setCount] = useState(0);
+
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles styles={{ ".a": { backgroundColor: "red" } }} />
+      <GlobalStyles styles={{ ".a": { backgroundColor: "rebeccapurple" } }} />
 
       <style>
         {`
-          .a {
-            background-color: red;
+          .b {
+            background-color: steelblue;
           }
         `}
       </style>
