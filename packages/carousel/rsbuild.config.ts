@@ -1,6 +1,7 @@
 import { defineConfig } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
 import { pluginModuleFederation } from "@module-federation/rsbuild-plugin";
+import { pluginLess } from "@rsbuild/plugin-less";
 import moduleFederationConfig from "./module-federation.config";
 
 export default defineConfig({
@@ -8,7 +9,11 @@ export default defineConfig({
     minify: false,
     assetPrefix: "http://localhost:3001/",
   },
-  plugins: [pluginReact(), pluginModuleFederation(moduleFederationConfig)],
+  plugins: [
+    pluginReact(),
+    pluginModuleFederation(moduleFederationConfig),
+    pluginLess(),
+  ],
   server: {
     port: 3001,
   },

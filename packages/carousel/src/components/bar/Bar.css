@@ -1,0 +1,21 @@
+.d {
+  background-color: brown;
+}
+
+.bar {
+  margin: 12px;
+  padding: 24px;
+  border: 1px solid white;
+}
+
+.bar__text--1 {
+  color: mediumturquoise;
+}
+
+.bar__text--2 {
+  color: lightskyblue;
+}
+
+.bar__text--3 {
+  color: lightblue;
+}

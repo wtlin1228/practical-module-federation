@@ -1,4 +1,4 @@
 import React from "react";
-import "./ProviderComponent.css";
+export declare const loadCss: () => Promise<void>;
 declare const Provider: React.FC;
 export default Provider;
