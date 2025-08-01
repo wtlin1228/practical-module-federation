@@ -13,6 +13,7 @@ import { Route as SearchRouteImport } from './routes/search'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as CarouselRouteImport } from './routes/carousel'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CarouselSplatRouteImport } from './routes/carousel/$'
 
 const SearchRoute = SearchRouteImport.update({
   id: '/search',
@@ -34,37 +35,45 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CarouselSplatRoute = CarouselSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => CarouselRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/carousel': typeof CarouselRoute
+  '/carousel': typeof CarouselRouteWithChildren
   '/checkout': typeof CheckoutRoute
   '/search': typeof SearchRoute
+  '/carousel/$': typeof CarouselSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/carousel': typeof CarouselRoute
+  '/carousel': typeof CarouselRouteWithChildren
   '/checkout': typeof CheckoutRoute
   '/search': typeof SearchRoute
+  '/carousel/$': typeof CarouselSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/carousel': typeof CarouselRoute
+  '/carousel': typeof CarouselRouteWithChildren
   '/checkout': typeof CheckoutRoute
   '/search': typeof SearchRoute
+  '/carousel/$': typeof CarouselSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/carousel' | '/checkout' | '/search'
+  fullPaths: '/' | '/carousel' | '/checkout' | '/search' | '/carousel/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/carousel' | '/checkout' | '/search'
-  id: '__root__' | '/' | '/carousel' | '/checkout' | '/search'
+  to: '/' | '/carousel' | '/checkout' | '/search' | '/carousel/$'
+  id: '__root__' | '/' | '/carousel' | '/checkout' | '/search' | '/carousel/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CarouselRoute: typeof CarouselRoute
+  CarouselRoute: typeof CarouselRouteWithChildren
   CheckoutRoute: typeof CheckoutRoute
   SearchRoute: typeof SearchRoute
 }
@@ -99,12 +108,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/carousel/$': {
+      id: '/carousel/$'
+      path: '/$'
+      fullPath: '/carousel/$'
+      preLoaderRoute: typeof CarouselSplatRouteImport
+      parentRoute: typeof CarouselRoute
+    }
   }
 }
 
+interface CarouselRouteChildren {
+  CarouselSplatRoute: typeof CarouselSplatRoute
+}
+
+const CarouselRouteChildren: CarouselRouteChildren = {
+  CarouselSplatRoute: CarouselSplatRoute,
+}
+
+const CarouselRouteWithChildren = CarouselRoute._addFileChildren(
+  CarouselRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CarouselRoute: CarouselRoute,
+  CarouselRoute: CarouselRouteWithChildren,
   CheckoutRoute: CheckoutRoute,
   SearchRoute: SearchRoute,
 }

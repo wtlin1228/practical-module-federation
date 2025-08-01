@@ -7,13 +7,10 @@
  */
 
 import React from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import Button from "@mui/material/Button";
 import { Foo } from "./foo";
 import { Bar } from "./bar";
-
-const theme = createTheme();
 
 // this turns the sync CSS asset into async
 export const loadCss = async () => {
@@ -22,7 +19,7 @@ export const loadCss = async () => {
 
 const Provider: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <GlobalStyles styles={{ ".a": { backgroundColor: "rebeccapurple" } }} />
 
       <style>
@@ -55,7 +52,7 @@ const Provider: React.FC = () => {
 
       <Foo />
       <Bar />
-    </ThemeProvider>
+    </>
   );
 };
 

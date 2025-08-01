@@ -59,7 +59,9 @@ export const Route = createRootRoute({
             </div>
           </div>
         </div>
-        <Outlet />
+        <div style={{ paddingTop: 60.5 }}>
+          <Outlet />
+        </div>
       </>
     );
   },

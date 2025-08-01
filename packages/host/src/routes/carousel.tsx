@@ -3,9 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/carousel")({
   loader: async () => {
-    const module = await loadRemote("carousel");
+    const module = await loadRemote("carousel/App");
     // @ts-expect-error
-    return { Root: module.default };
+    return { Root: module.App };
   },
   component: RouteComponent,
 });

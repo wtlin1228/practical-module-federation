@@ -11,6 +11,7 @@
     "@emotion/react": "catalog:",
     "@emotion/styled": "catalog:",
     "@mui/material": "catalog:",
+    "@tanstack/react-router": "^1.130.2",
     "react": "catalog:",
     "react-dom": "catalog:"
   },
@@ -19,6 +20,7 @@
     "@rsbuild/core": "^1.2.15",
     "@rsbuild/plugin-less": "^1.3.1",
     "@rsbuild/plugin-react": "^1.1.1",
+    "@tanstack/router-plugin": "^1.130.2",
     "@types/react": "^18.3.11",
     "@types/react-dom": "~18.3.1",
     "typescript": "^5.7.2"

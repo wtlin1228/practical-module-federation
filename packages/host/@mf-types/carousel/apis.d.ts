@@ -1,3 +1,3 @@
 
-    export type RemoteKeys = 'carousel';
-    type PackageType<T> = T extends 'carousel' ? typeof import('carousel') :any;
+    export type RemoteKeys = 'carousel/App';
+    type PackageType<T> = T extends 'carousel/App' ? typeof import('carousel/App') :any;
