@@ -9,6 +9,9 @@ export default defineConfig({
   output: {
     minify: false,
     assetPrefix: "http://localhost:3001/",
+    filename: {
+      css: "carousel_[name].[contenthash:8].css",
+    },
   },
   plugins: [
     pluginReact(),
