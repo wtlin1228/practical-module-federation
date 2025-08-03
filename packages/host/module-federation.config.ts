@@ -1,4 +1,5 @@
 import { createModuleFederationConfig } from "@module-federation/rsbuild-plugin";
+import { dependencies } from "./package.json";
 
 export default createModuleFederationConfig({
   name: "host",
@@ -10,7 +11,15 @@ export default createModuleFederationConfig({
   },
   shareStrategy: "loaded-first",
   shared: {
-    react: { singleton: true, requiredVersion: "^18.3.1" },
-    "react-dom": { singleton: true, requiredVersion: "^18.3.1" },
+    react: {
+      singleton: true,
+      eager: true,
+      requiredVersion: dependencies.react,
+    },
+    "react-dom": {
+      singleton: true,
+      eager: true,
+      requiredVersion: dependencies["react-dom"],
+    },
   },
 });

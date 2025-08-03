@@ -4,30 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-catalogs:
-  default:
-    '@emotion/react':
-      specifier: ^11.14.0
-      version: 11.14.0
-    '@emotion/styled':
-      specifier: ^11.14.0
-      version: 11.14.1
-    '@module-federation/enhanced':
-      specifier: ^0.17.1
-      version: 0.17.1
-    '@module-federation/rsbuild-plugin':
-      specifier: ^0.17.1
-      version: 0.17.1
-    '@mui/material':
-      specifier: ^7.2.0
-      version: 7.2.0
-    react:
-      specifier: ^18.3.1
-      version: 18.3.1
-    react-dom:
-      specifier: ^18.3.1
-      version: 18.3.1
-
 importers:
 
   .: {}
@@ -35,26 +11,26 @@ importers:
   packages/carousel:
     dependencies:
       '@emotion/react':
-        specifier: 'catalog:'
+        specifier: ^11.14.0
         version: 11.14.0(@types/react@18.3.23)(react@18.3.1)
       '@emotion/styled':
-        specifier: 'catalog:'
+        specifier: ^11.14.0
         version: 11.14.1(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1)
       '@mui/material':
-        specifier: 'catalog:'
+        specifier: ^7.2.0
         version: 7.2.0(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router':
         specifier: ^1.130.2
         version: 1.130.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
-        specifier: 'catalog:'
+        specifier: ^18.3.1
         version: 18.3.1
       react-dom:
-        specifier: 'catalog:'
+        specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@module-federation/rsbuild-plugin':
-        specifier: 'catalog:'
+        specifier: ^0.17.1
         version: 0.17.1(@rsbuild/core@1.4.11)(@rspack/core@1.4.10(@swc/helpers@0.5.17))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)(webpack@5.100.2)
       '@rsbuild/core':
         specifier: ^1.2.15
@@ -81,23 +57,23 @@ importers:
   packages/checkout:
     dependencies:
       '@emotion/react':
-        specifier: 'catalog:'
+        specifier: ^11.14.0
         version: 11.14.0(@types/react@18.3.23)(react@18.3.1)
       '@emotion/styled':
-        specifier: 'catalog:'
+        specifier: ^11.14.0
         version: 11.14.1(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1)
       '@mui/material':
-        specifier: 'catalog:'
+        specifier: ^7.2.0
         version: 7.2.0(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
-        specifier: 'catalog:'
+        specifier: ^18.3.1
         version: 18.3.1
       react-dom:
-        specifier: 'catalog:'
+        specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@module-federation/rsbuild-plugin':
-        specifier: 'catalog:'
+        specifier: ^0.17.1
         version: 0.17.1(@rsbuild/core@1.4.11)(@rspack/core@1.4.10(@swc/helpers@0.5.17))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)(webpack@5.100.2)
       '@rsbuild/core':
         specifier: ^1.2.15
@@ -118,29 +94,29 @@ importers:
   packages/host:
     dependencies:
       '@emotion/react':
-        specifier: 'catalog:'
+        specifier: ^11.14.0
         version: 11.14.0(@types/react@18.3.23)(react@18.3.1)
       '@emotion/styled':
-        specifier: 'catalog:'
+        specifier: ^11.14.0
         version: 11.14.1(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1)
       '@module-federation/enhanced':
-        specifier: 'catalog:'
+        specifier: ^0.17.1
         version: 0.17.1(@rspack/core@1.4.10(@swc/helpers@0.5.17))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)(webpack@5.100.2)
       '@mui/material':
-        specifier: 'catalog:'
+        specifier: ^7.2.0
         version: 7.2.0(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router':
         specifier: ^1.130.2
         version: 1.130.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
-        specifier: 'catalog:'
+        specifier: ^18.3.1
         version: 18.3.1
       react-dom:
-        specifier: 'catalog:'
+        specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@module-federation/rsbuild-plugin':
-        specifier: 'catalog:'
+        specifier: ^0.17.1
         version: 0.17.1(@rsbuild/core@1.4.11)(@rspack/core@1.4.10(@swc/helpers@0.5.17))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)(webpack@5.100.2)
       '@rsbuild/core':
         specifier: ^1.2.15
@@ -164,23 +140,23 @@ importers:
   packages/search:
     dependencies:
       '@emotion/react':
-        specifier: 'catalog:'
+        specifier: ^11.14.0
         version: 11.14.0(@types/react@18.3.23)(react@18.3.1)
       '@emotion/styled':
-        specifier: 'catalog:'
+        specifier: ^11.14.0
         version: 11.14.1(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1)
       '@mui/material':
-        specifier: 'catalog:'
+        specifier: ^7.2.0
         version: 7.2.0(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react@18.3.1))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
-        specifier: 'catalog:'
+        specifier: ^18.3.1
         version: 18.3.1
       react-dom:
-        specifier: 'catalog:'
+        specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@module-federation/rsbuild-plugin':
-        specifier: 'catalog:'
+        specifier: ^0.17.1
         version: 0.17.1(@rsbuild/core@1.4.11)(@rspack/core@1.4.10(@swc/helpers@0.5.17))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)(webpack@5.100.2)
       '@rsbuild/core':
         specifier: ^1.2.15

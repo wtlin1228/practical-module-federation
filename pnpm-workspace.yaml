@@ -1,6 +1,7 @@
 packages:
   - "packages/*"
 
+# don't use it since module federation doesn't work well with pnpm catalog
 catalog:
   react: ^18.3.1
   react-dom: ^18.3.1

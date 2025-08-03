@@ -1,8 +1,11 @@
 import { useEffect } from "react";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { registerRemotes } from "@module-federation/enhanced/runtime";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import "./App.css";
+
+const theme = createTheme();
 
 const router = createRouter({ routeTree });
 
@@ -26,7 +29,12 @@ const App = () => {
     ]);
   }, []);
 
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 };
 
 export default App;

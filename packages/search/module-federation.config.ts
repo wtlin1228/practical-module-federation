@@ -1,4 +1,5 @@
 import { createModuleFederationConfig } from "@module-federation/rsbuild-plugin";
+import { dependencies } from "./package.json";
 
 export default createModuleFederationConfig({
   name: "search",
@@ -6,8 +7,16 @@ export default createModuleFederationConfig({
     ".": "./src/components/ProviderComponent.tsx",
   },
   shared: {
-    react: { singleton: true, requiredVersion: "^18.3.1" },
-    "react-dom": { singleton: true, requiredVersion: "^18.3.1" },
+    react: {
+      singleton: true,
+      eager: true,
+      requiredVersion: dependencies.react,
+    },
+    "react-dom": {
+      singleton: true,
+      eager: true,
+      requiredVersion: dependencies["react-dom"],
+    },
   },
   getPublicPath: `function() { return "http://localhost:3003/"; }`,
 });
