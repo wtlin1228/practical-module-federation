@@ -9,13 +9,16 @@ export default createModuleFederationConfig({
   shared: {
     react: {
       singleton: true,
-      eager: true,
       requiredVersion: dependencies.react,
     },
     "react-dom": {
       singleton: true,
-      eager: true,
       requiredVersion: dependencies["react-dom"],
+    },
+    "@mui/material": {
+      singleton: true,
+      version: "7.2.0",
+      requiredVersion: dependencies["@mui/material"],
     },
   },
   getPublicPath: `function() { return "http://localhost:3002/"; }`,

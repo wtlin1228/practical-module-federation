@@ -21,5 +21,11 @@ export default createModuleFederationConfig({
       eager: true,
       requiredVersion: dependencies["react-dom"],
     },
+    "@mui/material": {
+      singleton: true,
+      eager: true,
+      version: "7.2.0",
+      requiredVersion: dependencies["@mui/material"],
+    },
   },
 });
