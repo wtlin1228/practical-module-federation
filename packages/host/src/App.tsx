@@ -5,7 +5,11 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import "./App.css";
 
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
 
 const router = createRouter({ routeTree });
 
