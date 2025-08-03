@@ -1,7 +1,10 @@
-import React from 'react';
-import './ProviderComponent.css';
+import React from "react";
+import "./ProviderComponent.css";
 
-const Provider: React.FC = () => {
+const Provider: React.FC<{
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+}> = (props) => {
   return (
     <div className="container">
       <div className="icon-container">
@@ -12,6 +15,8 @@ const Provider: React.FC = () => {
         />
       </div>
       <h1 className="title">Hello Module Federation 2.0</h1>
+      <div>Checkout: count={props.count}</div>
+      <button onClick={() => props.setCount((c) => c - 1)}>Checkout: -1</button>
     </div>
   );
 };

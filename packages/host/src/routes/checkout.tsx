@@ -1,3 +1,4 @@
+import React from "react";
 import { loadRemote } from "@module-federation/enhanced/runtime";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -13,5 +14,13 @@ export const Route = createFileRoute("/checkout")({
 function RouteComponent() {
   const { Root } = Route.useLoaderData();
 
-  return <Root />;
+  const [count, setCount] = React.useState(0);
+
+  return (
+    <div>
+      <div>Host: count={count}</div>
+      <button onClick={() => setCount((c) => c + 1)}>Host +1</button>
+      <Root count={count} setCount={setCount} />
+    </div>
+  );
 }

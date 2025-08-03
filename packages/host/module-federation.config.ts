@@ -10,7 +10,7 @@ export default createModuleFederationConfig({
   },
   shareStrategy: "loaded-first",
   shared: {
-    react: { singleton: true },
-    "react-dom": { singleton: true },
+    react: { singleton: true, requiredVersion: "^18.3.1" },
+    "react-dom": { singleton: true, requiredVersion: "^18.3.1" },
   },
 });
